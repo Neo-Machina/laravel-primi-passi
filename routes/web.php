@@ -15,22 +15,41 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $data = [
-        [
-            'artist' => 'Iggy Pop',
-            'album' => 'Lust for Life',
-            'release_year' => 1977
-        ],
-        [
-            'artist' => 'King Crimson',
-            'album' => 'In the Court of the Crimson King',
-            'release_year' => 1969
-        ],
-        [
-            'artist' => 'Low Roar',
-            'album' => 'Low Roar',
-            'release_year' => 2011
+        "discs" => [
+            [
+                'artist' => 'Iggy Pop',
+                'album' => 'Lust for Life',
+                'release_year' => 1977
+            ],
+            [
+                'artist' => 'King Crimson',
+                'album' => 'In the Court of the Crimson King',
+                'release_year' => 1969
+            ],
+            [
+                'artist' => 'Low Roar',
+                'album' => 'Low Roar',
+                'release_year' => 2011
+            ]
         ]
     ];
 
-    return view('home', ['discs' => $data]);
+    return view('home', $data);
 })->name('home');
+
+Route::get('/Pre-order-your-tickets', function () {
+
+    return view('concert');
+})->name('concert');
+
+Route::get('/store', function () {
+
+    return view('store');
+})->name('store');
+
+Route::get('/about-us', function () {
+
+    return view('info');
+})->name('info');
+
+

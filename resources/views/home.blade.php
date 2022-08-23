@@ -10,8 +10,22 @@
     
     <h1>Hello World</h1>
 
-    <div>
-        <h2>Dischi:</h2>
+    <header>
+        <ul>Links to other pages:
+            <li>
+                <a href="{{ route('concert') }}">Concerts</a>
+            </li>
+            <li>
+                <a href="{{ route('store') }}">Store</a>
+            </li>
+            <li>
+                <a href="{{ route('info') }}">Info</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <h2>Discs:</h2>
         @forelse ($discs as $disc)
             <h3>
                 Artist: {{ $disc['artist'] }}
@@ -28,6 +42,6 @@
 
             <div>Non ci sono dischi</div>  
         @endforelse       
-    </div>
+        </main>
 </body>
 </html>
